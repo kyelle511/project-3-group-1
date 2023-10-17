@@ -10,9 +10,9 @@ app = Flask(__name__)
 
 # Function to query SQLite database and return data as JSON
 def query_database():
-    conn = sqlite3.connect('stp_crime.db')
+    conn = sqlite3.connect('/Resources/stp_crime.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM crimes')
+    cursor.execute('SELECT * FROM crime_table')
     data = cursor.fetchall()
     conn.close()
     return data
@@ -20,13 +20,13 @@ def query_database():
 #Index Route
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", data=data())
 
 #Endpoint to serve data as JSON
 @app.route('/data')
 def data():
-    data = query_database
+    data = query_database()
     return jsonify(data)
 
 if __name__ =='__main__':
-    app.run(debug=True)
+    app.run(debug=False)
