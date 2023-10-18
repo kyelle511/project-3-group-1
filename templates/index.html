@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
 <head>
-    <title>Crime In St. Paul Analysis</title>
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crime in St. Paul Analysis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
-    <!-- Our JavaScript -->   
-    <script src="./static/js/displays.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    
 </head>
 <body>
     <header>
@@ -15,6 +18,41 @@
     </header>
 
     <div class="container">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12 jumbotron text-center">
+                <h1>St. Paul Crime Dashboard</h1>
+                <p>Use the interactive charts below to explore the dataset</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">
+                <div class="well">
+                  <h5>Year</h5>
+                  <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Incident Table</h3>
+                  </div>
+                  <div id="sample-metadata" class="panel-body"></div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div id="bar"></div>
+              </div>
+              <div class="col-md-5">
+                <div id="line"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div id="bubble"></div>
+              </div>
+            </div>
+          </div>
+
+
         <!-- Sidebar or navigation menu -->
         <div class="sidebar">
             <ul>
@@ -40,6 +78,12 @@
             </section>  
         </div>
     </div>
+    <!-- D3 JavaScript -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Chart JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Our JavaScript -->   
+    <script src="./static/js/displays.js"></script>
 
     <footer>
         <p>&copy; 2023 Group 1 Project 3</p>

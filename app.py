@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 # Function to query SQLite database and return data as JSON
 def query_database():
-    conn = sqlite3.connect('/Resources/stp_crime.db')
+    conn = sqlite3.connect('Resources/stp_crime.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM crime_table')
     data = cursor.fetchall()
