@@ -17,6 +17,15 @@
         <h1>Crime In St. Paul</h1>
     </header>
 
+    <!-- Set data variables -->
+    <script type = "text/javascript">
+      let date = {{ data.date }}
+      let year = {{ data.year }}
+      let month = {{ data.month }}
+      let incident = {{ data.incident }}
+      let neighborhood = {{ data.neighborhood }}
+    </script>
+
     <div class="container">
         <div class="container">
             <div class="row">
@@ -35,7 +44,7 @@
                   <div class="panel-heading">
                     <h3 class="panel-title">Incident Table</h3>
                   </div>
-                  <div id="sample-metadata" class="panel-body"></div>
+                  <div id="incident" class="panel-body"></div>
                 </div>
               </div>
               <div class="col-md-5">
@@ -78,12 +87,21 @@
             </section>  
         </div>
     </div>
+
     <!-- D3 JavaScript -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Chart JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Our JavaScript -->   
     <script src="./static/js/displays.js"></script>
+    <!-- Our JavaScript -->   
+    <script src="./static/js/bar.js"></script>
+    <!-- Our JavaScript -->   
+    <script src="./static/js/bubble.js"></script>
+    <!-- Our JavaScript -->   
+    <script src="./static/js/table.js"></script>
+    <!-- Our JavaScript -->   
+    <script src="./static/js/line.js"></script>
 
     <footer>
         <p>&copy; 2023 Group 1 Project 3</p>

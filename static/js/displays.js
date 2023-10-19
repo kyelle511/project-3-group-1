@@ -1,16 +1,18 @@
 
-// //Create a drop down menu based on the names 
-// let selector = d3.select("#selDataset");
+//Create a drop down menu based on the names 
+let selector = d3.select("#selDataset");
 
-// //Get the options from the sample names
-// d3.json(url).then((data) => {
-//     let sampleNames = data.names;
-
-//     //Loop through to get each sample name (id) and append to the dropdown options
-//     for (let i = 0; i < sampleNames.length; i++){
-//         selector
-//             .append("option")
-//             .text(sampleNames[i])
-//             .property("value", sampleNames[i]);
-//     };
-// });
+//Get the options from the year columns
+//Loop through to get each year and append to the dropdown options
+for (let i = 0; i < year.length; i++){
+    //Check if the year is already in the dropdown
+    let isYearPresent = selector.selectAll("option").nodes().some(option => option.value === year[i]);  
+    
+    //if year not already in dropdown add it
+    if (!isYearPresent) {
+    selector
+            .append("option")
+            .text(year[i])
+            .property("value", year[i]);
+    }
+};
