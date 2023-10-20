@@ -19,11 +19,13 @@
 
     <!-- Set data variables -->
     <script type = "text/javascript">
-      let date = {{ data.date }}
-      let year = {{ data.year }}
-      let month = {{ data.month }}
-      let incident = {{ data.incident }}
-      let neighborhood = {{ data.neighborhood }}
+      // console.log(crime_data)
+      let data = {{ crime_data }};
+      let dates = data.date;
+      let years = data.year;
+      let months = data.month;
+      let incidents = data.incident;
+      let neighborhoods = data.neighborhood;
     </script>
 
     <div class="container">

@@ -1,5 +1,6 @@
 #Import Dependencies
 from flask import Flask, render_template, jsonify
+from flask_cors import CORS
 import sqlite3
 
 import sqlalchemy
@@ -25,7 +26,7 @@ Crime = Base.classes.crime_table
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
+CORS(app,supports_credentials=True)
 #################################################
 # Flask Routes
 #################################################
@@ -39,17 +40,6 @@ def query_database():
     conn.close()
     return data
 
-#Index Route
-@app.route("/")
-def index():
-    return render_template("index.html", data=query_database())
-
-#Endpoint to serve data as JSON
-@app.route('/data')
-def data():
-    data = query_database()
-    return jsonify(data)
-
 def crime():
     # Create our session (link) from Python to the DB
     session = Session(engine)
@@ -59,7 +49,7 @@ def crime():
 
     session.close()
 
-    # Create a dictionary from the row data and append to a list of all_passengers
+    # Create a dictionary from the row data and append to a list of all_crime
     all_crime = []
     for DATE, YEAR, MONTH, INCIDENT, NEIGHBORHOOD in results:
         crime_dict = {}
@@ -68,9 +58,23 @@ def crime():
         crime_dict["month"] = MONTH
         crime_dict["incident"] = INCIDENT
         crime_dict["neighborhood"] = NEIGHBORHOOD
-        crime_dict.append(crime_dict)
+        all_crime.append(crime_dict)
 
-    return jsonify(all_crime)
+    return all_crime
+
+#Index Route
+@app.route("/")
+def index():
+    return render_template("index.html")
+    # , crime_data=jsonify(crime()))
+
+#Endpoint to serve data as JSON
+@app.route('/data')
+def data():
+    data = crime()
+    return jsonify(data)
+
+
 
 if __name__ =='__main__':
     app.run(debug=False)
