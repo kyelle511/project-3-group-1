@@ -17,18 +17,7 @@
         <h1>Crime In St. Paul</h1>
     </header>
 
-    <!-- Set data variables -->
-    <script type = "text/javascript">
-      // console.log(crime_data)
-      let data = {{ crime_data }};
-      let dates = data.date;
-      let years = data.year;
-      let months = data.month;
-      let incidents = data.incident;
-      let neighborhoods = data.neighborhood;
-    </script>
-
-    <div class="container">
+     <div class="container">
         <div class="container">
             <div class="row">
               <div class="col-md-12 jumbotron text-center">
@@ -94,15 +83,17 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Chart JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Plotly JavaScript -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- Our JavaScript -->   
     <script src="./static/js/displays.js"></script>
-    <!-- Our JavaScript -->   
+    <!-- Our JavaScript for Bar Chart -->   
     <script src="./static/js/bar.js"></script>
-    <!-- Our JavaScript -->   
+    <!-- Our JavaScript for Bubble Chart-->   
     <script src="./static/js/bubble.js"></script>
-    <!-- Our JavaScript -->   
+    <!-- Our JavaScript for Table-->   
     <script src="./static/js/table.js"></script>
-    <!-- Our JavaScript -->   
+    <!-- Our JavaScript for Line Chart-->   
     <script src="./static/js/line.js"></script>
 
     <footer>
