@@ -2,7 +2,6 @@
 from flask import Flask, render_template, jsonify
 from flask_cors import CORS
 import sqlite3
-
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -11,22 +10,22 @@ from sqlalchemy import create_engine, func
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///Resources/stp_crime.db")
 
+engine = create_engine("sqlite:///Resources/stp_crime.db")
 #reflect an existing database into a new model
 Base = automap_base()
-
 #reflect the tables
 Base.prepare(autoload_with=engine)
-
 # Save reference to the table
 Crime = Base.classes.crime_table
 
 #################################################
 # Flask Setup
 #################################################
+
 app = Flask(__name__)
 CORS(app,supports_credentials=True)
+
 #################################################
 # Flask Routes
 #################################################
@@ -43,12 +42,9 @@ def query_database():
 def crime():
     # Create our session (link) from Python to the DB
     session = Session(engine)
-
     # Query all crime incidents
     results = session.query(Crime.DATE, Crime.YEAR, Crime.MONTH, Crime.INCIDENT, Crime.NEIGHBORHOOD).all()
-
     session.close()
-
     # Create a dictionary from the row data and append to a list of all_crime
     all_crime = []
     for DATE, YEAR, MONTH, INCIDENT, NEIGHBORHOOD in results:
@@ -59,7 +55,6 @@ def crime():
         crime_dict["incident"] = INCIDENT
         crime_dict["neighborhood"] = NEIGHBORHOOD
         all_crime.append(crime_dict)
-
     return all_crime
 
 #Index Route
@@ -73,8 +68,6 @@ def index():
 def data():
     data = crime()
     return jsonify(data)
-
-
 
 if __name__ =='__main__':
     app.run(debug=False)
