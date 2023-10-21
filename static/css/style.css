@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Stencil'; /* Font name to be used in your styles */
+    src: url('fonts/stencil.woff2') format('woff2'), /* Path to your font file */
+         url('fonts/stencil.woff') format('woff'); /* Fallback font formats */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.jumbotron {
+    background-color: #337ab7;
+    color: white;
+    padding: 20px;
+}
+
+.jumbotron h1 {
+    font-family: 'Stencil', sans-serif;
+}
+
+.jumbotron p {
+    font-size: 20px;
+}
