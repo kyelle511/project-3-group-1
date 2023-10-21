@@ -13,10 +13,8 @@
     
 </head>
 <body>
-    <header>
-        <h1>Crime In St. Paul</h1>
-    </header>
 
+<<<<<<< HEAD
     <!-- Set data variables
     <script type = "text/javascript">
       // console.log(crime_data)
@@ -29,6 +27,9 @@
     </script> -->
 
     <div class="container">
+=======
+     <div class="container">
+>>>>>>> 1629bc132cb97e82e7e1453848f8e6935e3a981f
         <div class="container">
             <div class="row">
               <div class="col-md-12 jumbotron text-center">
@@ -40,7 +41,18 @@
               <div class="col-md-2">
                 <div class="well">
                   <h5>Year</h5>
-                  <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                  <select id="selDataset" onchange="optionChanged(this.value)">
+                      <option value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                    </select>
                 </div>
                 <div class="panel panel-primary">
                   <div class="panel-heading">
@@ -64,46 +76,25 @@
           </div>
 
 
-        <!-- Sidebar or navigation menu -->
-        <div class="sidebar">
-            <ul>
-                <li><a href="#section1">Section 1</a></li>
-                <li><a href="#section2">Section 2</a></li>
-                <li><a href="#section3">Section 3</a></li>
-                <li><a href="#section4">Section 4</a></li>
-            </ul>
-        </div>
-
-        <!-- Main content area -->
-        <div class="main-content">
-            <section id="section1">
-                <h2>Section 1</h2>
-            </section>  
-            <section id="section2">
-                <h2>Section 2</h2>
-            <section id="section3">
-                <h2>Section 3</h2>
-            </section>  
-            <section id="section4">
-                <h2>Section 4</h2>
-            </section>  
-        </div>
-    </div>
-
+      
     <!-- D3 JavaScript -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Chart & Plotly JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<<<<<<< HEAD
+=======
+    <!-- Plotly JavaScript -->
+>>>>>>> 1629bc132cb97e82e7e1453848f8e6935e3a981f
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- Our JavaScript -->   
     <script src="./static/js/displays.js"></script>
-    <!-- Our JavaScript -->   
+    <!-- Our JavaScript for Bar Chart -->   
     <script src="./static/js/bar.js"></script>
-    <!-- Our JavaScript -->   
+    <!-- Our JavaScript for Bubble Chart-->   
     <script src="./static/js/bubble.js"></script>
-    <!-- Our JavaScript -->   
+    <!-- Our JavaScript for Table-->   
     <script src="./static/js/table.js"></script>
-    <!-- Our JavaScript -->   
+    <!-- Our JavaScript for Line Chart-->   
     <script src="./static/js/line.js"></script>
 
     <footer>
