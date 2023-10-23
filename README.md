@@ -41,6 +41,8 @@ We then took the finished DataFrame and created a SQLite database to be used in 
 -app.py<br>
 Our Python Flask API has two main routes.  The index route which launches the HTML, CSS and Javascript files and the data route which accesses the data from the SQLite database to be used in creating the data dashboard. 
 
+<img src="Images/dashboard_header.png" >
+
 -St. Paul Crime Data Dashboard<br>
 The dashboard utilizes the index.html file, the style.css file and displays.js file to create the the multi-chart visualization. Users are able to select the year to view data from using the drop down. It then provides 5 visualizations:<br>
     1- A panel that shows the Neighborhood with the most incidents for each incident type.<br>
@@ -49,10 +51,10 @@ The dashboard utilizes the index.html file, the style.css file and displays.js f
     4- A line chart that shows the number of each incident per month (with each incident having a unique line).<br>
     5- A bubble chart that shows the number of incidents for the city overall. <br>
 
-## Images
+## Charts
 
 <img src="Images/Screenshot 2023-10-23 174149.png" >
-                       <img src="Images/Screenshot 2023-10-23 174102.png">
+<img src="Images/Screenshot 2023-10-23 174102.png" >
 
 
 ## Analysis
