@@ -1,5 +1,3 @@
-# project-3-group-1
-
 Contributors: Matthew Bond, Angela Gosewehr, Tristan Vazquez & Katy Yelle
 
 ## Project Background
@@ -50,6 +48,12 @@ The dashboard utilizes the index.html file, the style.css file and displays.js f
     3- A bar chart that shows the top ten incidents for the city overall.<br>
     4- A line chart that shows the number of each incident per month (with each incident having a unique line).<br>
     5- A bubble chart that shows the number of incidents for the city overall. <br>
+
+## Images
+
+<img src="Images/Screenshot 2023-10-23 174149.png" >
+                       <img src="Images/Screenshot 2023-10-23 174102.png">
+
 
 ## Analysis
 1- How has crime changed in St. Paul year to year?
