@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Stencil'; /* Font name to be used in your styles */
-    src: url('fonts/stencil.woff2') format('woff2'), /* Path to your font file */
+    font-family: 'Stencil'; /* Font name to be used in styles */
+    src: url('fonts/stencil.woff2') format('woff2'), /* Path to font file */
          url('fonts/stencil.woff') format('woff'); /* Fallback font formats */
     font-weight: normal;
     font-style: normal;
