@@ -26,6 +26,7 @@ Using our dashboard we hope to answer the following questions:
             -images
         -templates
             -index.html
+        -Images
 
 ## File and Process Overview
 -crime_incident_data.csv<br>
