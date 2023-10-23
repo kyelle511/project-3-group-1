@@ -7,20 +7,9 @@ Analyzing crime data has many uses such as deciding where to rent or buy a home,
 
 Using our dashboard we hope to answer the following questions: 
 1- How has crime changed in St. Paul year to year?
-    - Total crime volume peaked in 2020
-    - The incident with the largest increase in volume from 2014-2020 was 'discharge of a firearm'.
-    - The neighborhood with the highest crime volumes transitioned from Payne/Phalen to Capitol River.
-    
 2- Are there times of the year when certain crimes might be more prevalent in St. Paul?
-    - During Summer: Theft, Vandalism/Criminal Damage, and Narcotics are more prevalent.
-    - During Winter: Auto theft is the most prevalent most years.
-    - In 2023 and 2022, proactive patrol parallels to theft, criminal damages, auto theft, narcotics, discharge
-      and burglary.
-      
 3- How do crimes change based on the neighborhood?
-    -Overall highest percentage of crimes over the years switched from Payne/Phalen in 2015 to 2017 to Capitol 
-     River in 2018 to 2020 and again in 2022. Homicides are low overall in the city over the years. Lowest overall      percentage of crime was between St. Anthony and Summit Hill.
-     
+    
 ## Repository Structure
     -Main Folder
         -app.py
@@ -64,11 +53,18 @@ The dashboard utilizes the index.html file, the style.css file and displays.js f
 
 ## Analysis
 1- How has crime changed in St. Paul year to year?
-
+- Total crime volume peaked in 2020
+- The incident with the largest increase in volume from 2014-2020 was 'discharge of a firearm'.
+- The neighborhood with the highest crime volumes transitioned from Payne/Phalen to Capitol River.
+    
 2- Are there times of the year when certain crimes might be more prevalent in St. Paul?
+- During Summer: Theft, Vandalism/Criminal Damage, and Narcotics are more prevalent.
+- During Winter: Auto theft is the most prevalent most years.
+- In 2023 and 2022, proactive patrol parallels to theft, criminal damages, auto theft, narcotics, discharge and burglary.
 
 3- How do crimes change based on the neighborhood?
-
+-Overall highest percentage of crimes over the years switched from Payne/Phalen in 2015 to 2017 to Capitol River in 2018 to 2020 and again in 2022. Homicides are low overall in the city over the years. Lowest overall percentage of crime was between St. Anthony and Summit Hill.
+     
 Future work and Analysis:
 Dashboard <br>
 -Add a dashboard page that has a dropdown for different neighborhoods to dig deeper into their crime data; combine with additional datasets to creat neighborhood profile data with demographics, housing prices, etc.
