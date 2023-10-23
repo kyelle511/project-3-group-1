@@ -1,6 +1,6 @@
 const url = "http://localhost:5000/data"
 
-d3.json(url).then(function(data) {
+d3.json(url).then(function (data) {
     console.log(data)
 });
 
@@ -12,13 +12,13 @@ function filterDataByYear(data, year) {
 //Function to caculate incident counts by neighborhood
 function calculateNeighborhoodCounts(data, year) {
     let filterData = filterDataByYear(data, year);
-    
+
     let neighborhoodCounts = {};
-    filterData.forEach(entry=> {
-        let neighborhood = entry.neighborhood; 
-        neighborhoodCounts[neighborhood] = (neighborhoodCounts[neighborhood] || 0) +1;
+    filterData.forEach(entry => {
+        let neighborhood = entry.neighborhood;
+        neighborhoodCounts[neighborhood] = (neighborhoodCounts[neighborhood] || 0) + 1;
     });
-    
+
     console.log(neighborhoodCounts);
 
     return neighborhoodCounts
@@ -78,6 +78,22 @@ function maxNeighborhoodsTable(maxNeighborhoods) {
     console.log(entries);
 }
 
+// Function to calculate top 10 incidents each year
+function calculateTopIncidents(data, year) {
+    let filterData = filterDataByYear(data, year);
+
+    let incidentCounts = {}; // Initialize an empty object to store incident coun
+
+    filterData.forEach(entry => {
+        let incident = entry.incident;
+        incidentCounts[incident] = (incidentCounts[incident] || 0) + 1;
+    });
+
+    console.log(incidentCounts);
+
+    return incidentCounts;
+}
+
 //Function to generate pie chart
 function pieChart(neighborhoodCounts) {
     let labels = Object.keys(neighborhoodCounts);
@@ -129,10 +145,42 @@ function bubbleChart(incidentCounts) {
     Plotly.newPlot('bubble', data, layout);
 }
 
+//Function to create bar chart for top 10 incidents
+function barChart(topIncidents) {
+    let labels = Object.keys(topIncidents);
+    let values = Object.values(topIncidents);
+
+    
+    let barData = [
+        {
+          x: labels.slice(0, 10),
+          y: values.slice(0, 10),
+          type: "bar"
+        }
+    ];
+
+    let barLayout = {
+        title: 'Top 10 Crime Incident Types',
+        width: 500,
+        height: 500,
+        xaxis: {
+            title: "Crime Incident Type",
+            tickangle: -90
+               },
+        yaxis: {
+            title: "Crime Incident Count"
+              }
+}
+Plotly.newPlot('bar', barData, barLayout);
+
+}
+
+
+
 //Function for the initial displays
 function init() {
     //Fetch data from the API and create the initial graph
-    d3.json(url).then(function(data) {
+    d3.json(url).then(function (data) {
         //Filter data for the year 2014
         let filterData = filterDataByYear(data, 2014);
         updateGraph(filterData);
@@ -146,85 +194,90 @@ function init() {
 
         let incidentCounts = calculateIncidentCounts(filterData, 2014);
         bubbleChart(incidentCounts)
+        // Calculate top 10 incidents by year
+        let topIncidents = calculateTopIncidents(filterData, 2014)
+        barChart(topIncidents);
     })
-    .catch(function(error) {
-        console.error("Error fetching data:", error);
-    });
+        .catch(function (error) {
+            console.error("Error fetching data:", error);
+        });
 }
 
 //Function to update the graph
-function updateGraph(filterData){
-        
+function updateGraph(filterData) {
+
     //On change to the DOM, call getData()
-    d3.select("#selDataset").on("change", function() {
+    d3.select("#selDataset").on("change", function () {
         let selectedYear = parseInt(d3.select(this).property("value"));
-        d3.json(url).then(function(data) {
+        d3.json(url).then(function (data) {
             let filterData = filterDataByYear(data, selectedYear);
             updateGraph(filterData);
 
             let neighborhoodCounts = calculateNeighborhoodCounts(filterData, selectedYear);
             let incidentCounts = calculateIncidentCounts(filterData, selectedYear);
             let maxNeighborhoods = calculateMaxNeighborhoods(filterData, selectedYear)
+            let topIncidents = calculateTopIncidents(filterData, selectedYear)
 
             pieChart(neighborhoodCounts);
             bubbleChart(incidentCounts);
             maxNeighborhoodsTable(maxNeighborhoods)
+            barChart(topIncidents);
         });
     });
-    
+
     console.log(filterData);
 
-        //Calculate the count for each combination of "MONTH" and "INCIDENT"
-        let countData = {};
+    //Calculate the count for each combination of "MONTH" and "INCIDENT"
+    let countData = {};
 
-        filterData.forEach(entry => {
-            let key = entry.month + '-' +entry.incident;
-            countData[key] = (countData[key] || 0) +1;
+    filterData.forEach(entry => {
+        let key = entry.month + '-' + entry.incident;
+        countData[key] = (countData[key] || 0) + 1;
+    });
+
+    //Extract months and incidents from the data
+    let months = new Set(filterData.map(entry => entry.month));
+    let incidents = new Set(filterData.map(entry => entry.incident));
+
+    console.log(months, incidents)
+
+    //Prepare data for the line chart
+    let linedata = [];
+
+    incidents.forEach(incidentType => {
+        let counts = [...months].map(month => {
+            let key = month + '-' + incidentType;
+            return countData[key] || 0;
         });
 
-        //Extract months and incidents from the data
-        let months = new Set(filterData.map(entry=>entry.month));
-        let incidents = new Set(filterData.map(entry=>entry.incident));
-
-        console.log(months, incidents)
-
-        //Prepare data for the line chart
-        let linedata = [];
-
-        incidents.forEach(incidentType => {
-            let counts = [...months].map(month => {
-                let key = month + '-' + incidentType;
-                return countData[key] || 0;
-            });
-       
-            linedata.push({
-                x: months,
-                y: counts,
-                type: 'line',
-                name: incidentType
-            });
+        linedata.push({
+            x: months,
+            y: counts,
+            type: 'line',
+            name: incidentType
         });
+    });
 
-        // Generate the bubble chart data (TRISTAN)
+    // Generate the bubble chart data (TRISTAN)
 
-    
-        let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-        let layout = {
-            title: 'Crime Count by Month',
-            xaxis: {
-                title: 'Month',
-                tickangle: -45,
-                tickvals: months,
-                ticktext: [...months].map(month=> monthNames[month - 1])
-            },
-            yaxis: {
-                title: 'Crime Count'
-            }
-        };
-        
-         Plotly.newPlot("line", linedata, layout);
+    let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+    let layout = {
+        title: 'Crime Count by Month',
+        xaxis: {
+            title: 'Month',
+            tickangle: -45,
+            tickvals: months,
+            ticktext: [...months].map(month => monthNames[month - 1])
+        },
+        yaxis: {
+            title: 'Crime Count'
+        }
+    };
+
+    Plotly.newPlot("line", linedata, layout);
 };
-    
+
 init();
 
