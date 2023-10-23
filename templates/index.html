@@ -19,7 +19,6 @@
             <div class="row">
               <div class="col-md-12 jumbotron text-center">
                 <h1>St. Paul Crime Dashboard</h1>
-                <p>Use the interactive charts below to explore the dataset</p>
               </div>
             </div>
             <div class="row">
@@ -39,21 +38,22 @@
                       <option value="2023">2023</option>
                     </select>
                 </div>
-                <div class="panel panel-primary">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Incident Table</h3>
-                  </div>
-                  <div id="incident" class="panel-body"></div>
-                </div>
               </div>
               <div class = "col-md-6">
                 <div id="pie"></div>
               </div>
               <div class = "col-md-4">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                  <h3 class="panel-title">Incident & Top Neighborhood Table</h3>
+                  </div>
+                  <div id="incident" class="panel-body"></div>
+                </div>
+              </div>
+            <div class = "row">
+              <div class = "col-md-6">
                 <div id="bar"></div>
               </div>
-
-            <div class = "row">
               <div class="col-md-6">
                 <div id="line"></div>
               </div>
@@ -67,22 +67,18 @@
 
     <!-- D3 JavaScript -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- Chart JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Plotly JavaScript -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- Our JavaScript for displays (line and pie) -->   
+    <!-- Our JavaScript for Data Visualizations  -->   
     <script src="./static/js/displays.js"></script>
-    <!-- Our JavaScript for Bar Chart -->   
-    <script src="./static/js/bar.js"></script>
-    <!-- Our JavaScript for Bubble Chart-->   
-    <script src="./static/js/bubble.js"></script>
-    <!-- Our JavaScript for Table-->   
-    <script src="./static/js/table.js"></script>
+
 
 
     <footer>
         <p>&copy; 2023 Group 1 Project 3</p>
+        <p>This data was provided from the city of St. Paul under a Public Domain license, with the following disclaimer:</p>
+        <p>"This data was provided "as is" and without any warranty as to their performance, merchantability, or fitness for any particular purpose. The City of St. Paul does not represent or warrant that the data or the data documentation are error-free, complete, current or accurate.
+        You are responsible for any consequences resulting from your use of the data or your reliance on the data. If you transmit or provide the data (or any portion of it) to another user, the data must include this disclaimer."</p>
     </footer>
 </body>
 </html>
