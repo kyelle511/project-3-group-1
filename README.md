@@ -63,7 +63,9 @@ The dashboard utilizes the index.html file, the style.css file and displays.js f
 - In 2023 and 2022, proactive patrol parallels to theft, criminal damages, auto theft, narcotics, discharge and burglary.
 
 3- How do crimes change based on the neighborhood?
--Overall highest percentage of crimes over the years switched from Payne/Phalen in 2015 to 2017 to Capitol River in 2018 to 2020 and again in 2022. Homicides are low overall in the city over the years. Lowest overall percentage of crime was between St. Anthony and Summit Hill.
+- Overall highest percentage of crimes over the years switched from Payne/Phalen in 2015 to 2017 to Capitol River in 2018 to 2020 and again in 2022.
+- Homicides are low overall in the city over the years.
+- Lowest overall percentage of crime was between St. Anthony and Summit Hill.
      
 Future work and Analysis:
 Dashboard <br>
