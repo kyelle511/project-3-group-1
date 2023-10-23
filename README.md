@@ -55,6 +55,8 @@ The dashboard utilizes the index.html file, the style.css file and displays.js f
 
 <img src="Images/Screenshot 2023-10-23 174149.png" >
 <img src="Images/Screenshot 2023-10-23 174102.png" >
+<img src="Images\Screenshot 2023-10-23 174128.png" >
+<img src="Images\Screenshot 2023-10-23 174212.png" >
 
 
 ## Analysis
