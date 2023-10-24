@@ -37,8 +37,10 @@ This data are provided to you “as is” and without any warranty as to their p
 -crime_data.ipynb<br>
 We extracted the data and cleaned it using Pandas in JupyterNotebook.  As part of this process we ensured that our date column was in the datetime format and then used it to generate a year column and a month column. We removed the number in the Neighborhood name column. We reviewed the 'incidents' column combining entries into one format (i.e. Agg. Assault Dom. and Agg. Assault Dom to Aggravated Assault Domestic) and combining similar entries (i.e. Proactive Police Visit and Proactive Foot Patrol were combined to 'Proactive Patrol'). We then reduced the number of columns to be Date, Year, Month, Incident, and Neighborhood. 
 
-<img src="Images\initial_df.png" >
-                                                            <img src="Images\clean_df.png" >
+<p algin="center">
+    <img src="Images\initial_df.png" />
+</p>
+<img src="Images\clean_df.png" >
 
 We then took the finished DataFrame and created a SQLite database to be used in our Python Flask API. 
 
