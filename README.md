@@ -29,17 +29,20 @@ Using our dashboard we hope to answer the following questions:
         -Images
 
 ## File and Process Overview
+### Initial Data Source
 -crime_incident_data.csv<br>
 We downloaded the dataset on 10/12/23 from (https://information.stpaul.gov/datasets/stpaul::crime-incident-report/about). It includes data from August 14, 2014 through the most recent update. The data came with the following license:
 Public Domain
 This data are provided to you “as is” and without any warranty as to their performance, merchantability, or fitness for any particular purpose. The City of Saint Paul does not represent or warrant that the data or the data documentation are error-free, complete, current, or accurate. You are responsible for any consequences resulting from your use of the data or your reliance on the data. If you transmit or provide the data (or any portion of it) to another user, the data must include this disclaimer.
 
--crime_data.ipynb<br>
-We extracted the data and cleaned it using Pandas in JupyterNotebook.  As part of this process we ensured that our date column was in the datetime format and then used it to generate a year column and a month column. We removed the number in the Neighborhood name column. We reviewed the 'incidents' column combining entries into one format (i.e. Agg. Assault Dom. and Agg. Assault Dom to Aggravated Assault Domestic) and combining similar entries (i.e. Proactive Police Visit and Proactive Foot Patrol were combined to 'Proactive Patrol'). We then reduced the number of columns to be Date, Year, Month, Incident, and Neighborhood. 
-
 <p algin="center">
     <img src="Images\initial_df.png" />
 </p>
+
+### Cleaned DataFrame
+-crime_data.ipynb<br>
+We extracted the data and cleaned it using Pandas in JupyterNotebook.  As part of this process we ensured that our date column was in the datetime format and then used it to generate a year column and a month column. We removed the number in the Neighborhood name column. We reviewed the 'incidents' column combining entries into one format (i.e. Agg. Assault Dom. and Agg. Assault Dom to Aggravated Assault Domestic) and combining similar entries (i.e. Proactive Police Visit and Proactive Foot Patrol were combined to 'Proactive Patrol'). We then reduced the number of columns to be Date, Year, Month, Incident, and Neighborhood. 
+
 <img src="Images\clean_df.png" >
 
 We then took the finished DataFrame and created a SQLite database to be used in our Python Flask API. 
@@ -59,9 +62,16 @@ The dashboard utilizes the index.html file, the style.css file and displays.js f
 
 ## Charts
 
+### Line Graph
 <img src="Images/Screenshot 2023-10-23 174149.png" >
+
+### Pie Chart
 <img src="Images/Screenshot 2023-10-23 174102.png" >
+
+### Bar Chart
 <img src="Images\Screenshot 2023-10-23 174128.png" >
+
+### Bubble Chart
 <img src="Images\Screenshot 2023-10-23 174212.png" >
 
 
