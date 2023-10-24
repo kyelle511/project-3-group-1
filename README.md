@@ -63,13 +63,17 @@ The dashboard utilizes the index.html file, the style.css file and displays.js f
 ## Charts
 
 ### Line Graph
+<p algin="center">
 <img src="Images/Screenshot 2023-10-23 174149.png" >
+</p>
 
 ### Pie Chart
 <img src="Images/Screenshot 2023-10-23 174102.png" >
 
 ### Bar Chart
+<p algin="center">
 <img src="Images\Screenshot 2023-10-23 174128.png" >
+</p>
 
 ### Bubble Chart
 <img src="Images\Screenshot 2023-10-23 174212.png" >
