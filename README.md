@@ -72,8 +72,8 @@ The dashboard utilizes the index.html file, the style.css file and displays.js f
 - The neighborhood with the highest crime volumes transitioned from Payne/Phalen to Capitol River.
     
 2- Are there times of the year when certain crimes might be more prevalent in St. Paul?
-- During Summer: Theft, Vandalism/Criminal Damage, and Narcotics are more prevalent.
-- During Winter: Auto theft is the most prevalent most years.
+- Theft, Vandalism/Criminal Damage, and Narcotics all have peaks during summer months.
+- Auto theft has a peak during winter months for most years.
 - In 2023 and 2022, proactive patrol parallels to theft, criminal damages, auto theft, narcotics, discharge and burglary.
 
 3- How do crimes change based on the neighborhood?
