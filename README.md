@@ -35,7 +35,7 @@ We downloaded the dataset on 10/12/23 from (https://information.stpaul.gov/datas
 Public Domain
 This data are provided to you “as is” and without any warranty as to their performance, merchantability, or fitness for any particular purpose. The City of Saint Paul does not represent or warrant that the data or the data documentation are error-free, complete, current, or accurate. You are responsible for any consequences resulting from your use of the data or your reliance on the data. If you transmit or provide the data (or any portion of it) to another user, the data must include this disclaimer.
 
-<p algin="center">
+<p align="center">
     <img src="Images\initial_df.png" />
 </p>
 
